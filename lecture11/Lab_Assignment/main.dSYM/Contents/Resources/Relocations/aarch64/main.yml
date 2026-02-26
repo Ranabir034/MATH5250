@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/ranabir034/Documents/ISU_Research/Courses/MATH5250/lecture11/Lab_Assignment/main'
+relocations:     []
+...
