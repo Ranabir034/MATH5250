@@ -1,0 +1,118 @@
+Lmod Warning:
+-------------------------------------------------------------------------------
+The following dependent module(s) are not currently loaded: bzip2/1.0.8-6mbjq6l
+(required by: freetype/2.13.2-2qeiajz, tar/1.35-mua7b7d,
+gettext/0.23.1-33g5lwl, python/3.13.8-dyklsdb), expat/2.7.1-7aeg5ye (required
+by: python/3.13.8-dyklsdb), libbsd/0.12.2-fylhtjm (required by:
+libxdmcp/1.1.5-5givahz), libiconv/1.18-r4tljyb (required by: tar/1.35-mua7b7d,
+gettext/0.23.1-33g5lwl), libxml2/2.13.5-ojk5yl4 (required by:
+fontconfig/2.15.0-py39-yijqn5p, gettext/0.23.1-33g5lwl), openssl/3.0.7-6lnrulr
+(required by: python/3.13.8-dyklsdb), openssl/3.2.1-wohkbfi (required by:
+curl/8.7.1-xykwlsf, micromamba/1.4.2-lcemqbe), xz/5.6.3-r67hqdy (required by:
+tar/1.35-mua7b7d, gettext/0.23.1-33g5lwl, python/3.13.8-dyklsdb),
+zlib-ng/2.1.6-nf73pqi (required by: curl/8.7.1-xykwlsf, libxml2/2.10.3-t6x3p3p,
+libarchive/3.7.1-av33zlp, libreproc/14.2.4-rkug3ae, libsolv/0.7.22-nzuikjy),
+zstd/1.5.7-2gfvban (required by: tar/1.35-mua7b7d)
+-------------------------------------------------------------------------------
+
+
+
+========================================
+  Monte Carlo pi -- OpenMP vs MPI
+  Samples = 100000000
+========================================
+gcc -O2 -fopenmp -o mc_openmp mc_openmp.c -lm
+mpicc -O2 -o mc_mpi mc_mpi.c -lm
+
+--- OpenMP: 1 thread ---
+
+--- Monte Carlo pi (OpenMP) ---
+  Samples   : 100000000
+  Threads   : 1
+  Inside    : 78538317
+  pi (est)  : 3.14153268
+  pi (true) : 3.14159265
+  error     : 6.00e-05
+  time      : 1.1573 s
+
+--- OpenMP: 4 threads ---
+
+--- Monte Carlo pi (OpenMP) ---
+  Samples   : 100000000
+  Threads   : 4
+  Inside    : 78541459
+  pi (est)  : 3.14165836
+  pi (true) : 3.14159265
+  error     : 6.57e-05
+  time      : 0.2901 s
+
+--- OpenMP: 8 threads ---
+
+--- Monte Carlo pi (OpenMP) ---
+  Samples   : 100000000
+  Threads   : 8
+  Inside    : 78536496
+  pi (est)  : 3.14145984
+  pi (true) : 3.14159265
+  error     : 1.33e-04
+  time      : 0.1462 s
+
+--- OpenMP: 16 threads ---
+
+--- Monte Carlo pi (OpenMP) ---
+  Samples   : 100000000
+  Threads   : 16
+  Inside    : 78540861
+  pi (est)  : 3.14163444
+  pi (true) : 3.14159265
+  error     : 4.18e-05
+  time      : 0.0791 s
+
+--- MPI: 1 process ---
+
+--- Monte Carlo pi (MPI) ---
+  Samples   : 100000000
+  Processes : 1
+  Inside    : 78538317
+  pi (est)  : 3.14153268
+  pi (true) : 3.14159265
+  error     : 6.00e-05
+  time      : 1.5150 s
+
+--- MPI: 4 processes ---
+
+--- Monte Carlo pi (MPI) ---
+  Samples   : 100000000
+  Processes : 4
+  Inside    : 78541459
+  pi (est)  : 3.14165836
+  pi (true) : 3.14159265
+  error     : 6.57e-05
+  time      : 0.3791 s
+
+--- MPI: 8 processes ---
+
+--- Monte Carlo pi (MPI) ---
+  Samples   : 100000000
+  Processes : 8
+  Inside    : 78536496
+  pi (est)  : 3.14145984
+  pi (true) : 3.14159265
+  error     : 1.33e-04
+  time      : 0.1904 s
+
+--- MPI: 16 processes ---
+
+--- Monte Carlo pi (MPI) ---
+  Samples   : 100000000
+  Processes : 16
+  Inside    : 78540861
+  pi (est)  : 3.14163444
+  pi (true) : 3.14159265
+  error     : 4.18e-05
+  time      : 0.0964 s
+
+
+========================================
+  Done
+========================================
